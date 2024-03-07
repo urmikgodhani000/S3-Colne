@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "d078e708-e7ad-4d18-99e4-43922a9bf1c2",
+		"name": "Jktech-S3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19469335"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"urmik\",\r\n    \"email\" : \"urmik@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"urmik@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bucket",
+			"item": [
+				{
+					"name": "Create bucket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"UG Doc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/buckets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buckets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get bucket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buckets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buckets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Object",
+			"item": [
+				{
+					"name": "Create folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Gov Docc\",\r\n    \"parent_id\" : \"65e9950f81e17bce711fd717\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/objects/folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"objects",
+								"folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload file",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/Urmik/Downloads/Queries regarding task.pdf",
+										"/C:/Users/Urmik/Downloads/calmscapeapp-firebase-adminsdk-3mk8e-a86ea0b27c.json",
+										"/C:/Users/Urmik/Downloads/google-services (2).json"
+									]
+								},
+								{
+									"key": "parent_id",
+									"value": "65e9967f9288db9e226500b9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/objects/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"objects",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/objects/65e9967f9288db9e226500b9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"objects",
+								"65e9967f9288db9e226500b9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file using stream",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/objects/file/65e99788954b9f8d08c52948",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"objects",
+								"file",
+								"65e99788954b9f8d08c52948"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete file",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTk5NDJmODFlMTdiY2U3MTFmZDcxMyIsImlhdCI6MTcwOTgwNjcyNCwiZXhwIjoxNzEyMzk4NzI0fQ.51G_Nw2NSNrdHaJ8Rxd179nIHUZj4V-UdJAsv8vkDCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/objects/65e99d81254b24e8cce75c37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"objects",
+								"65e99d81254b24e8cce75c37"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
